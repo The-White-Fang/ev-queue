@@ -48,8 +48,8 @@ class EventQueue<T> {
   }
 
   private async process() {
+    this.isRunning = true;
     while (1) {
-      this.isRunning = true;
       const task = this.high.shift() || this.queue.shift();
 
       if (!task) {
@@ -67,13 +67,13 @@ class EventQueue<T> {
   }
 
   /**
-   * @param priority - defaultValue 'low'
+   * @param priority - defaultValue `'low'`
    * @returns
    */
   add(task: TaskFunc<T>, priority: 'high' | 'low' = 'low') {
     const taskObj: Task<T> = { id: uuidV4(), exec: task };
     const promise = new Promise((resovle, reject) => {
-      this.listener.on(taskObj.id, (error: Error, data: T) => {
+      this.listener.once(taskObj.id, (error: Error, data: T) => {
         if (error) {
           return reject(error);
         }
