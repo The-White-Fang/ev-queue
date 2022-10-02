@@ -1,9 +1,13 @@
 {
   "name": "ev-queue",
   "version": "1.0.1",
-  "description": "",
+  "description": "Queue asynchronous functions, that can be executed in sequence with delay.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:The-White-Fang/ev-queue.git"
+  },
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",

@@ -72,7 +72,7 @@ class EventQueue<T> {
    */
   add(task: TaskFunc<T>, priority: 'high' | 'low' = 'low') {
     const taskObj: Task<T> = { id: uuidV4(), exec: task };
-    const promise = new Promise((resovle, reject) => {
+    const promise = new Promise<T>((resovle, reject) => {
       this.listener.once(taskObj.id, (error: Error, data: T) => {
         if (error) {
           return reject(error);
