@@ -1,6 +1,6 @@
 {
   "name": "ev-queue",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Queue asynchronous functions, that can be executed in sequence with delay.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
