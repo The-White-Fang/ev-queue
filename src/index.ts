@@ -53,7 +53,7 @@ class EventQueue<T> {
       const task = this.high.shift() || this.queue.shift();
 
       if (!task) {
-        return;
+        break;
       }
 
       task
